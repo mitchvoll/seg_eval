@@ -1,0 +1,113 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$header-color: #7B1D13;
+$header-link-color: #BEB5B5;
+
+@mixin box_sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 60px;
+}
+
+section {
+    overflow: auto;
+}
+
+/* header */
+
+.navbar-inverse {
+    background-color: $header-color;
+    .navbar-nav{
+	li {
+	    a {
+		color: $header-link-color;
+	    }
+	}
+    }
+}
+
+#logo {
+    float: left;
+    margin-right: 15px;
+    font-size: 1.8em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+/* footer */
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+}
+
+footer a {
+    color: #555;
+}
+
+footer a:hover {
+    color: #222;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+input {
+    height: auto !important;
+}
+
+#error_explanation {
+    color: red;
+    ul {
+        color: red;
+        margin: 0 0 30px 0;
+    }
+}
+
+.field_with_errors {
+    @extend .has-error;
+    .form-control {
+        color: $state-danger-text;
+    }
+}
+
+/* datasets */
+
+.dataset_listing {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.image_thumbnail {
+    margin-top: 10px;
+}

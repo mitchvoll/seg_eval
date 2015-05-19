@@ -1,0 +1,12 @@
+<div class="row dataset_listing" id="dataset-<%= dataset.id %>">
+    <div class="col-md-4">
+        <%= image_tag("ExampleImage.jpg", alt: "Dataset #{dataset.id} thumbnail", class: "img-responsive image_thumbnail") %>
+    </div>
+    <div class="col-md-8">
+        <h3><%= dataset.name %></h3>
+        <p><b>Description:</b><%= "\t#{dataset.description}" %></p>
+        <p><b>Size:</b><%= "\t#{dataset.width} x #{dataset.height} x #{dataset.frames}" %></p>
+        <%= link_to "Download", '#' %>
+    </div>
+</div>
+       

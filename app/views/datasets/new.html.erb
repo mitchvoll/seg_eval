@@ -1,0 +1,22 @@
+<h1>Create a new dataset</h1>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@dataset) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.label :filename %>
+            <%= f.text_field :filename %>
+            <%= f.label :thumbnail %>
+            <%= f.text_field :thumbnail %>
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+            <%= f.label :height %>
+            <%= f.number_field(:height) %>
+            <%= f.label :width %>
+            <%= f.number_field(:width) %>
+            <%= f.label :frames %>
+            <%= f.number_field(:frames) %>
+            <%= f.submit "Create new dataset", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

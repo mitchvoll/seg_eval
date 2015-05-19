@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-8">
+        <% if @datasets.any? %>
+            <h3>Datasets (<%= @datasets.count %>)</h3>
+            <ol class="datasets">
+                <%= render @datasets %>
+            </ol>
+        <% else %>
+            <h3> No Datasets Available </h3>
+        <% end %>
+    </div>
+</div>
