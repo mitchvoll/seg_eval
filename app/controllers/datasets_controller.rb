@@ -1,4 +1,5 @@
 class DatasetsController < ApplicationController
+    before_action :logged_in_user, only: [:new, :create]
     def index
         @datasets = Dataset.all
     end
@@ -8,13 +9,16 @@ class DatasetsController < ApplicationController
     end
 
     def create
-        @dataset = Dataset.new(dataset_params)
+        @dataset = current_user.datasets.build(dataset_params)
         if @dataset.save
             flash[:sucess] = "Success: new dataset created!"
             redirect_to @dataset
         else
             render 'new'
         end
+    end
+
+    def destroy
     end
 
     def show

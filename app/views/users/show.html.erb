@@ -1,1 +1,27 @@
-<%= @user.name %>, <%= @user.email %>
+<div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-default profile_panel">
+	    <div class="panel-heading">
+	        <h4 class="text-center">
+		    <%= @user.name %>
+	        </h4>
+	    </div>
+	    <div class="panel-body">
+	        <hr>
+	        <p><strong>Name: </strong><%= @user.name %></p>
+	        <hr>
+	        <p><strong>Email: </strong><%= @user.email %></p>
+	        <hr>
+	        <p><strong>Member Since: </strong><%= @user.created_at.to_date %></p>
+	    </div>
+        </div>
+    </div>
+    <% if @user.datasets.any? %>
+        <div class="col-md-6">
+            <h3>Submitted Datasets (<%= @user.datasets.count %>)</h3>
+            <ol class="datasets">
+                <%= render @datasets %>
+            </ol>
+        </div>
+    <% end %>
+</div>

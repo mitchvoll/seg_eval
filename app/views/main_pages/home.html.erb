@@ -7,17 +7,17 @@
   <div class="row">
     <div class="col-md-4">
       <%= image_tag("ExampleImage.jpg", alt: "Example Image", class: "img-responsive") %>
-      <h3>Download Datasets</h3>
+      <h3><%= link_to "Download Datasets", datasets_path %></h3>
       <h5>More information</h5>
     </div>
     <div class="col-md-4">
       <%= image_tag("ExampleImage.jpg", alt: "Example Image", class: "img-responsive") %>
-      <h3>Evaluate Segmentations</h3>
+      <h3><%= link_to "Evaluate Segmentations", '#' %></h3>
       <h5>More information</h5>
     </div>
     <div class="col-md-4">
       <%= image_tag("ExampleImage.jpg", alt: "Example Image", class: "img-responsive") %>
-      <h3>Compare Algorithms </h3>
+      <h3><%= link_to "Compare Algorithms", algorithms_path %> </h3>
       <h5>More information</h5>
     </div>
   </div>

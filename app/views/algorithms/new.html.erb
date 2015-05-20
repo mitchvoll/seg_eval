@@ -1,0 +1,39 @@
+<h1>Create a new algorithm</h1>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for @algorithm, :multipart => true, :html => {:class => "form-horizontal"} do |f| %>
+            <div class="form-group">
+                <%= f.label :name, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :name %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :description, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_area :description %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :code, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_area :code, placeholder: "Enter you code here..." %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :filetype, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :filetype %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :filename, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.file_field :filename %>
+                    <p class="help-block">Upload the file with a proper extension type</p>
+                </div>
+            </div>
+            <%= f.submit "Create", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
