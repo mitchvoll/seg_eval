@@ -1,0 +1,9 @@
+<div class="row algorithm_listing" id="algorithm-<% algorithm.id %>">
+    <div class="col-md-12">
+        <h3><%= link_to algorithm.name, algorithm %></h3>
+        <p><b>Description:</b><%= algorithm.description %></p>
+        <p><b>Language:</b><%= algorithm.filetype %></p>
+        <p><b>Author:</b><%= algorithm.user.name %></p>
+        <%= link_to "Download", "uploads/algorithm/#{algorithm.user_id}/#{algorithm.id}/#{algorithm.filename}", :format => :text %>
+    </div>
+</div>

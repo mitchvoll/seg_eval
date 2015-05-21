@@ -10,16 +10,14 @@ class AlgorithmsController < ApplicationController
     end
 
     def create
+        @algorithm = current_user.algorithms.build(algorithm_params)
         if @algorithm.save
             uploaded_file = params[:algorithm][:filename]
             filename = uploaded_file.original_filename
-            @algorithm = current_user.algorithms.build(algorithm_params)
-            puts @algorithm.id
             dir = Rails.root.join('public','uploads','algorithm',current_user.id.to_s,@algorithm.id.to_s)
-            puts dir
             FileUtils.mkdir_p(dir) unless File.directory?(dir)
-            File.open(Rails.root.join('public','uploads','algorithm',current_user.id.to_s,@algorithm.id.to_s,filename),
-                      'wb') do |file|
+            File.open(Rails.root.join('public','uploads','algorithm',current_user.id.to_s,
+                                      @algorithm.id.to_s,filename), 'wb') do |file|
                 file.write(uploaded_file.read)
             end
             flash[:success] = "Success: new algorithm created!"
@@ -38,7 +36,7 @@ class AlgorithmsController < ApplicationController
     def algorithm_params
         permitted = params.require(:algorithm).permit(:name, :description, :code, :filetype)
         permitted[:filename] = params[:algorithm][:filename].original_filename
-        permitted
+        return permitted
     end
 
     def algorithm_filename

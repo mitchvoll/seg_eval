@@ -2,20 +2,43 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_for(@dataset) do |f| %>
-            <%= f.label :name %>
-            <%= f.text_field :name %>
-            <%= f.label :filename %>
-            <%= f.text_field :filename %>
-            <%= f.label :thumbnail %>
-            <%= f.text_field :thumbnail %>
-            <%= f.label :description %>
-            <%= f.text_field :description %>
-            <%= f.label :height %>
-            <%= f.number_field(:height) %>
-            <%= f.label :width %>
-            <%= f.number_field(:width) %>
-            <%= f.label :frames %>
-            <%= f.number_field(:frames) %>
+            <div class="form-group">
+                <%= f.label :name, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :name %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :description, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :description %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :height, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.number_field(:height) %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :width, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.number_field(:width) %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :frames, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.number_field(:frames) %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :file, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.file_field :file %>
+                    <p class="help-block">Upload the file with a proper extension type</p>
+                </div>
+            </div>
             <%= f.submit "Create new dataset", class: "btn btn-primary" %>
         <% end %>
     </div>

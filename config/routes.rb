@@ -14,5 +14,9 @@ Rails.application.routes.draw do
 
     resources :users
     resources :datasets
-    resources :algorithms
+    resources :algorithms do
+        member do
+            get :download
+        end
+    end
 end
