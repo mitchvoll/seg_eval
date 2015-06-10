@@ -10,6 +10,7 @@ class DatasetsController < ApplicationController
 
     def create
         @dataset = current_user.datasets.build(dataset_params)
+        @dataset.download_num = 0
         if @dataset.save
             uploaded_file = params[:dataset][:file]
             filename = uploaded_file.original_filename

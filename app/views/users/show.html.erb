@@ -16,12 +16,15 @@
 	    </div>
         </div>
     </div>
-    <% if @user.datasets.any? %>
-        <div class="col-md-6">
+    <div class="col-md-6">    
+        <% if @user.datasets.any? %>
             <h3>Submitted Datasets (<%= @user.datasets.count %>)</h3>
             <ol class="datasets">
                 <%= render @datasets %>
             </ol>
+        <% end %>
+        <div class="col-md-6 col-md-offset-3"
+             <%= button_to "Create new datset", "/datasets/new", :class => "btn btn-primary", :method => :get %>
         </div>
-    <% end %>
+    </div>
 </div>

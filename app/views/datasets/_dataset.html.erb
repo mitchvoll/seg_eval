@@ -6,7 +6,7 @@
         <h3><%= dataset.name %></h3>
         <p><b>Description:</b><%= "\t#{dataset.description}" %></p>
         <p><b>Size:</b><%= "\t#{dataset.width} x #{dataset.height} x #{dataset.frames}" %></p>
-        <%= link_to "Download", "uploads/dataset/#{dataset.user.id}/#{dataset.id}/#{dataset.filename}" %>
+        <%= link_to "Download", getDataset(dataset) %>
     </div>
 </div>
        
